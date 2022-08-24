@@ -425,7 +425,7 @@ if __name__ == '__main__':
                     " ".join([
                         "<div class='r-text-recipe'>",
                         "<div class='food-title'>",
-                        f"<h2 class='font-title text-bold'>Offer{j}</h2>",
+                        f"<h2 class='font-title text-bold'>Offer {j}</h2>",
                         "</div>",
                         '<div class="divider"><div class="divider-mask"></div></div>',
                         f"<img src='{image_png}' />",
