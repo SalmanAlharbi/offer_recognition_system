@@ -23,3 +23,36 @@ this model is also traiend using SSD MobileNet V2 FPNLite 320x320 pretreained mo
 ![spandah_booklet1_lableled_p1_o3-1381547765](https://user-images.githubusercontent.com/54520739/186298696-73ab7204-c45b-4db6-9bb3-d2d28a6b10ac.jpg)
 
 and outputs a bounding box for each information of the offer bounding box.
+
+![image](https://user-images.githubusercontent.com/54520739/186298937-09ee2266-fcfd-4985-b22b-7fdfdde50936.png)
+
+
+
+...
+├───assets
+│   └───image_examples
+├───bin #reqiered to run the model
+├───models #reqiered to run the model
+├───my_models
+│   └───models
+│       ├───offer_box_detection_model
+│       └───offer_data_recognition
+├───protoc #reqiered to run the model
+├───src  #reqiered to run the model
+└───workspace
+    ├───annotations
+    ├───images
+    │   ├───collectedimages
+    │   │   ├───offers_only_dataset
+    │   │   └───offer_box_dataset
+    ├───models
+    │   ├───offer_box_detection_model
+    │   └───offer_data_recognition
+    └───pretrained_models
+        ├───efficientdet_d4_coco17
+        ├───faster_rcnn_resnet152_v1_1024x1024
+        ├───faster_rcnn_resnet50_v1_640x640
+        ├───ssd_mobilenet_v2_fpnlite_320x320
+        └───ssd_resnet50_v1_fpn_1024x1024
+
+...
