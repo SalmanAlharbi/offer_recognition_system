@@ -34,7 +34,6 @@ and outputs a bounding box for each information of the offer bounding box.
 ├───assets
 │   └───image_examples
 ├───bin #reqiered to run the model
-├───models #reqiered to run the model
 ├───my_models
 │   └───models
 │       ├───offer_box_detection_model
@@ -51,11 +50,8 @@ and outputs a bounding box for each information of the offer bounding box.
     │   ├───offer_box_detection_model
     │   └───offer_data_recognition
     └───pretrained_models
-        ├───efficientdet_d4_coco17
-        ├───faster_rcnn_resnet152_v1_1024x1024
-        ├───faster_rcnn_resnet50_v1_640x640
         ├───ssd_mobilenet_v2_fpnlite_320x320
-        └───ssd_resnet50_v1_fpn_1024x1024
+
 
 ```
 
