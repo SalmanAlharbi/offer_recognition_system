@@ -10,22 +10,23 @@ to see more details about the data and its structure go to <a href="https://gith
 ### Offers detector model
 this model is a traiend using SSD MobileNet V2 FPNLite 320x320 pretreained model it takes as an input a booklet page like the one bellow.
 
-<img src="https://user-images.githubusercontent.com/54520739/186296014-976bef57-21fe-4cdc-9110-c0040f76043b.jpg" width="600" height="1100">
+<img src="https://user-images.githubusercontent.com/54520739/186296014-976bef57-21fe-4cdc-9110-c0040f76043b.jpg" width="600" height="800">
 
 
 and outputs a bounding box for each offers on the image.
 
-<img src="https://user-images.githubusercontent.com/54520739/186297684-77e80c6d-ea93-4664-b892-a1d1a21fb977.png" width="600" height="1100">
+<img src="https://user-images.githubusercontent.com/54520739/186297684-77e80c6d-ea93-4664-b892-a1d1a21fb977.png" width="600" height="800">
 
 ### offers' data detector model
 this model is also traiend using SSD MobileNet V2 FPNLite 320x320 pretreained model but it takes the bonding boxes from the erlier model "one a time".
 
-![spandah_booklet1_lableled_p1_o3-1381547765](https://user-images.githubusercontent.com/54520739/186298696-73ab7204-c45b-4db6-9bb3-d2d28a6b10ac.jpg)
 
+<img src="https://user-images.githubusercontent.com/54520739/186298696-73ab7204-c45b-4db6-9bb3-d2d28a6b10ac.jpg" width="250" height="250">
 and outputs a bounding box for each information of the offer bounding box.
 
 ![image](https://user-images.githubusercontent.com/54520739/186298937-09ee2266-fcfd-4985-b22b-7fdfdde50936.png)
 
+<img src="https://user-images.githubusercontent.com/54520739/186298937-09ee2266-fcfd-4985-b22b-7fdfdde50936.png" width="250" height="250">
 
 
 ```bash
