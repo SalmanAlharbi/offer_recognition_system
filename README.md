@@ -28,7 +28,7 @@ and outputs a bounding box for each information of the offer bounding box.
 
 
 
-...
+```bash
 ├───assets
 │   └───image_examples
 ├───bin #reqiered to run the model
@@ -55,4 +55,4 @@ and outputs a bounding box for each information of the offer bounding box.
         ├───ssd_mobilenet_v2_fpnlite_320x320
         └───ssd_resnet50_v1_fpn_1024x1024
 
-...
+```
