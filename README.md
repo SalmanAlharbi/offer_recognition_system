@@ -24,11 +24,12 @@ this model is also traiend using SSD MobileNet V2 FPNLite 320x320 pretreained mo
 <img src="https://user-images.githubusercontent.com/54520739/186298696-73ab7204-c45b-4db6-9bb3-d2d28a6b10ac.jpg" width="250" height="250">
 and outputs a bounding box for each information of the offer bounding box.
 
-![image](https://user-images.githubusercontent.com/54520739/186298937-09ee2266-fcfd-4985-b22b-7fdfdde50936.png)
 
 <img src="https://user-images.githubusercontent.com/54520739/186298937-09ee2266-fcfd-4985-b22b-7fdfdde50936.png" width="250" height="250">
 
 
+
+## repo structure
 ```bash
 ├───assets
 │   └───image_examples
@@ -57,3 +58,8 @@ and outputs a bounding box for each information of the offer bounding box.
         └───ssd_resnet50_v1_fpn_1024x1024
 
 ```
+
+
+## to improve in the future
+
+
