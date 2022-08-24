@@ -3,7 +3,7 @@
 this project contains two models the way how they were trained the datasets they were trained which you can also find in this repo with the scripts used to create them and finally a streamlit website that deploys those two models into a pipeline of models that detect and recognize the weekly offers booklets of Saudi Major supermarkets specifically Panda and Altmimi booklets. Still, it can be used with other similar formatted booklets.
 
 
-##Data
+## Data
 to see more details about the data and its structure go to <a href="https://github.com/Salma7577/offers_dataset_web_scrabing">this repo</a>
 
 ## Models 
