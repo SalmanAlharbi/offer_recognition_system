@@ -5,7 +5,7 @@ this project contains two models the way how they were trained the datasets they
 
 ## main packages and libraries used
 streamlit, cv2, tensorflow, pytesseract, spacy
-this repo contains the object_detection from tensorflow which can be found in <a hred="https://github.com/tensorflow/models/tree/master/research/object_detection">this repo</a>
+this repo contains the object_detection from tensorflow which can be found in <a href="https://github.com/tensorflow/models/tree/master/research/object_detection">this repo</a>
 
 ## Data
 to see more details about the data and its structure go to <a href="https://github.com/Salma7577/offers_dataset_web_scrabing">this repo</a>
