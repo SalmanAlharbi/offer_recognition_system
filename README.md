@@ -60,6 +60,5 @@ and outputs a bounding box for each information of the offer bounding box.
 ```
 
 
-## to improve in the future
 
 
