@@ -2,12 +2,10 @@ import streamlit as st
 import numpy as np
 import cv2
 import tensorflow as tf
-import tensorflow as tf
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as viz_utils
-from models.research.object_detection.builders import model_builder
+from object_detection.builders import model_builder
 from object_detection.utils import config_util
-from PIL import Image
 import pytesseract as tess
 import re
 import spacy
@@ -234,7 +232,7 @@ if __name__ == '__main__':
     if(file):
         load_page_model()
         nlp = spacy.load("en_core_web_sm")
-        img = Image.open(file)
+        img = im.open(file)
         image_np = image_np = np.array(img)
         image_np_with_detections,  boxes, scores, _ = detect_page(
             image_np)
