@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import cv2
 import tensorflow as tf
+import sys
+sys.path.append("models\\research")
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as viz_utils
 from object_detection.builders import model_builder
