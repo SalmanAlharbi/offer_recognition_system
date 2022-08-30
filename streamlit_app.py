@@ -26,7 +26,7 @@ data_category_index = None
 def load_page_model():
     # Load pipeline config and build a detection model
     configs = config_util.get_configs_from_pipeline_file(
-        r"my_models\models\offer_box_detection_model\pipeline.config")
+        r"my_models/models/offer_box_detection_model/pipeline.config")
     global page_detection_model
     page_detection_model = model_builder.build(
         model_config=configs['model'], is_training=False)
@@ -34,13 +34,13 @@ def load_page_model():
     # Restore checkpoint
     ckpt = tf.compat.v2.train.Checkpoint(model=page_detection_model)
     ckpt.restore(
-        r"my_models\models\offer_box_detection_model\ckpt-51").expect_partial()
+        "my_models/models/offer_box_detection_model/ckpt-51").expect_partial()
 
 
 def load_offer_model():
     # Load pipeline config and build a detection model
     configs = config_util.get_configs_from_pipeline_file(
-        r"my_models\models\offer_data_recognition\pipeline.config")
+        "my_models/models/offer_data_recognition/pipeline.config")
     global offer_detection_model
     offer_detection_model = model_builder.build(
         model_config=configs['model'], is_training=False)
@@ -48,18 +48,18 @@ def load_offer_model():
     # Restore checkpoint
     ckpt = tf.compat.v2.train.Checkpoint(model=offer_detection_model)
     ckpt.restore(
-        r"my_models\models\offer_data_recognition\ckpt-52").expect_partial()
+        "my_models/models/offer_data_recognition/ckpt-52").expect_partial()
 
 
 def load_label_map_offer():
     data_category_index = label_map_util.create_category_index_from_labelmap(
-        r"my_models\models\offer_data_recognition\label_map.pbtxt")
+        "my_models/models/offer_data_recognition/label_map.pbtxt")
     return data_category_index
 
 
 def load_label_map_page():
     page_category_index = label_map_util.create_category_index_from_labelmap(
-        r"my_models\models\offer_box_detection_model\label_map.pbtxt")
+        "my_models/models/offer_box_detection_model/label_map.pbtxt")
     return page_category_index
 
 
