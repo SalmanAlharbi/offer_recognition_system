@@ -9,6 +9,7 @@ from models.research.object_detection.utils import label_map_util
 from models.research.object_detection.utils import visualization_utils as viz_utils
 from models.research.object_detection.builders import model_builder
 from models.research.object_detection.utils import config_util
+
 import pytesseract as tess
 import re
 import spacy
