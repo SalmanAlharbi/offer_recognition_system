@@ -17,7 +17,6 @@ from spacy.matcher import Matcher
 import base64
 from io import BytesIO
 from PIL import Image as im
-tess.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
 page_detection_model = None
 offer_category_index = None
 offer_detection_model = None
