@@ -1,6 +1,6 @@
 ﻿# weekly-offers-detection-system
  ## Introduction
-this project contains two models the way how they were trained the datasets they were trained which you can also find in this repo with the scripts used to create them and finally a streamlit website that deploys those two models into a pipeline of models that detect and recognize the weekly offers booklets of Saudi Major supermarkets specifically Panda and Altmimi booklets. Still, it can be used with other similar formatted booklets.
+this project contains two models the way how they were trained the datasets they were trained which you can also find in this repo with the scripts used to create them and finally a streamlit website that deploys those two models into a pipeline of models that detect and recognize the weekly offers booklets of Saudi Major supermarkets specifically Panda and Altmimi booklets. Still, it can be used with other similar formatted booklets.</br>
 <a href="https://salma7577-offers-detection-system-streamlit-app-9uzqmg.streamlitapp.com/">click here</a> to try the system
 ## main packages and libraries used
 streamlit, cv2, tensorflow, pytesseract, spacy
