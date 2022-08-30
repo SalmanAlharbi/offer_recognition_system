@@ -24,11 +24,11 @@ from six.moves import zip
 import tensorflow.compat.v2 as tf
 
 from tensorflow.python.keras import backend as keras_backend
-from object_detection.meta_architectures import ssd_meta_arch
-from object_detection.models import bidirectional_feature_pyramid_generators as bifpn_generators
-from object_detection.utils import ops
-from object_detection.utils import shape_utils
-from object_detection.utils import tf_version
+from models.research.object_detection.meta_architectures import ssd_meta_arch
+from models.research.object_detection.models import bidirectional_feature_pyramid_generators as bifpn_generators
+from models.research.object_detection.utils import ops
+from models.research.object_detection.utils import shape_utils
+from models.research.object_detection.utils import tf_version
 # pylint: disable=g-import-not-at-top
 if tf_version.is_tf2():
   try:

@@ -40,24 +40,24 @@ from six.moves import zip
 import tensorflow.compat.v1 as tf
 import tensorflow.compat.v2 as tf2
 
-from object_detection.box_coders import faster_rcnn_box_coder
-from object_detection.box_coders import mean_stddev_box_coder
-from object_detection.core import box_coder
-from object_detection.core import box_list
-from object_detection.core import box_list_ops
-from object_detection.core import densepose_ops
-from object_detection.core import keypoint_ops
-from object_detection.core import matcher as mat
-from object_detection.core import region_similarity_calculator as sim_calc
-from object_detection.core import standard_fields as fields
-from object_detection.matchers import argmax_matcher
-from object_detection.matchers import hungarian_matcher
-from object_detection.utils import shape_utils
-from object_detection.utils import target_assigner_utils as ta_utils
-from object_detection.utils import tf_version
+from models.research.object_detection.box_coders import faster_rcnn_box_coder
+from models.research.object_detection.box_coders import mean_stddev_box_coder
+from models.research.object_detection.core import box_coder
+from models.research.object_detection.core import box_list
+from models.research.object_detection.core import box_list_ops
+from models.research.object_detection.core import densepose_ops
+from models.research.object_detection.core import keypoint_ops
+from models.research.object_detection.core import matcher as mat
+from models.research.object_detection.core import region_similarity_calculator as sim_calc
+from models.research.object_detection.core import standard_fields as fields
+from models.research.object_detection.matchers import argmax_matcher
+from models.research.object_detection.matchers import hungarian_matcher
+from models.research.object_detection.utils import shape_utils
+from models.research.object_detection.utils import target_assigner_utils as ta_utils
+from models.research.object_detection.utils import tf_version
 
 if tf_version.is_tf1():
-  from object_detection.matchers import bipartite_matcher  # pylint: disable=g-import-not-at-top
+  from models.research.object_detection.matchers import bipartite_matcher  # pylint: disable=g-import-not-at-top
 
 ResizeMethod = tf2.image.ResizeMethod
 

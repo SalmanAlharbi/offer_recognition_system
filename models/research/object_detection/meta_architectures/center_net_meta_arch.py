@@ -24,15 +24,15 @@ import functools
 import tensorflow.compat.v1 as tf
 import tensorflow.compat.v2 as tf2
 
-from object_detection.core import box_list
-from object_detection.core import box_list_ops
-from object_detection.core import keypoint_ops
-from object_detection.core import model
-from object_detection.core import standard_fields as fields
-from object_detection.core import target_assigner as cn_assigner
-from object_detection.utils import shape_utils
-from object_detection.utils import target_assigner_utils as ta_utils
-from object_detection.utils import tf_version
+from models.research.object_detection.core import box_list
+from models.research.object_detection.core import box_list_ops
+from models.research.object_detection.core import keypoint_ops
+from models.research.object_detection.core import model
+from models.research.object_detection.core import standard_fields as fields
+from models.research.object_detection.core import target_assigner as cn_assigner
+from models.research.object_detection.utils import shape_utils
+from models.research.object_detection.utils import target_assigner_utils as ta_utils
+from models.research.object_detection.utils import tf_version
 
 
 # Number of channels needed to predict size and offsets.

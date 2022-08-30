@@ -16,9 +16,9 @@
 
 import tensorflow.compat.v1 as tf
 
-from object_detection.core import box_list
-from object_detection.core import box_list_ops
-from object_detection.utils import shape_utils
+from models.research.object_detection.core import box_list
+from models.research.object_detection.core import box_list_ops
+from models.research.object_detection.utils import shape_utils
 
 
 def image_shape_to_grids(height, width):

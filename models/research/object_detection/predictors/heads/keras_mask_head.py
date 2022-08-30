@@ -27,9 +27,9 @@ import math
 from six.moves import range
 import tensorflow.compat.v1 as tf
 
-from object_detection.predictors.heads import head
-from object_detection.utils import ops
-from object_detection.utils import shape_utils
+from models.research.object_detection.predictors.heads import head
+from models.research.object_detection.utils import ops
+from models.research.object_detection.utils import shape_utils
 
 
 class ConvolutionalMaskHead(head.KerasHead):

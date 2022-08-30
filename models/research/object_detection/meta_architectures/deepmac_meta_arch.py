@@ -9,20 +9,20 @@ from absl import logging
 import numpy as np
 import tensorflow as tf
 
-from object_detection.builders import losses_builder
-from object_detection.core import box_list
-from object_detection.core import box_list_ops
-from object_detection.core import losses
-from object_detection.core import preprocessor
-from object_detection.core import standard_fields as fields
-from object_detection.meta_architectures import center_net_meta_arch
-from object_detection.models.keras_models import hourglass_network
-from object_detection.models.keras_models import resnet_v1
-from object_detection.protos import center_net_pb2
-from object_detection.protos import losses_pb2
-from object_detection.utils import shape_utils
-from object_detection.utils import spatial_transform_ops
-from object_detection.utils import tf_version
+from models.research.object_detection.builders import losses_builder
+from models.research.object_detection.core import box_list
+from models.research.object_detection.core import box_list_ops
+from models.research.object_detection.core import losses
+from models.research.object_detection.core import preprocessor
+from models.research.object_detection.core import standard_fields as fields
+from models.research.object_detection.meta_architectures import center_net_meta_arch
+from models.research.object_detection.models.keras_models import hourglass_network
+from models.research.object_detection.models.keras_models import resnet_v1
+from models.research.object_detection.protos import center_net_pb2
+from models.research.object_detection.protos import losses_pb2
+from models.research.object_detection.utils import shape_utils
+from models.research.object_detection.utils import spatial_transform_ops
+from models.research.object_detection.utils import tf_version
 
 if tf_version.is_tf2():
   import tensorflow_io as tfio  # pylint:disable=g-import-not-at-top

@@ -20,31 +20,31 @@ import sys
 
 from absl import logging
 
-from object_detection.builders import anchor_generator_builder
-from object_detection.builders import box_coder_builder
-from object_detection.builders import box_predictor_builder
-from object_detection.builders import hyperparams_builder
-from object_detection.builders import image_resizer_builder
-from object_detection.builders import losses_builder
-from object_detection.builders import matcher_builder
-from object_detection.builders import post_processing_builder
-from object_detection.builders import region_similarity_calculator_builder as sim_calc
-from object_detection.core import balanced_positive_negative_sampler as sampler
-from object_detection.core import post_processing
-from object_detection.core import target_assigner
-from object_detection.meta_architectures import center_net_meta_arch
-from object_detection.meta_architectures import context_rcnn_meta_arch
-from object_detection.meta_architectures import deepmac_meta_arch
-from object_detection.meta_architectures import faster_rcnn_meta_arch
-from object_detection.meta_architectures import rfcn_meta_arch
-from object_detection.meta_architectures import ssd_meta_arch
-from object_detection.predictors.heads import mask_head
-from object_detection.protos import losses_pb2
-from object_detection.protos import model_pb2
-from object_detection.utils import label_map_util
-from object_detection.utils import ops
-from object_detection.utils import spatial_transform_ops as spatial_ops
-from object_detection.utils import tf_version
+from models.research.object_detection.builders import anchor_generator_builder
+from models.research.object_detection.builders import box_coder_builder
+from models.research.object_detection.builders import box_predictor_builder
+from models.research.object_detection.builders import hyperparams_builder
+from models.research.object_detection.builders import image_resizer_builder
+from models.research.object_detection.builders import losses_builder
+from models.research.object_detection.builders import matcher_builder
+from models.research.object_detection.builders import post_processing_builder
+from models.research.object_detection.builders import region_similarity_calculator_builder as sim_calc
+from models.research.object_detection.core import balanced_positive_negative_sampler as sampler
+from models.research.object_detection.core import post_processing
+from models.research.object_detection.core import target_assigner
+from models.research.object_detection.meta_architectures import center_net_meta_arch
+from models.research.object_detection.meta_architectures import context_rcnn_meta_arch
+from models.research.object_detection.meta_architectures import deepmac_meta_arch
+from models.research.object_detection.meta_architectures import faster_rcnn_meta_arch
+from models.research.object_detection.meta_architectures import rfcn_meta_arch
+from models.research.object_detection.meta_architectures import ssd_meta_arch
+from models.research.object_detection.predictors.heads import mask_head
+from models.research.object_detection.protos import losses_pb2
+from models.research.object_detection.protos import model_pb2
+from models.research.object_detection.utils import label_map_util
+from models.research.object_detection.utils import ops
+from models.research.object_detection.utils import spatial_transform_ops as spatial_ops
+from models.research.object_detection.utils import tf_version
 
 ## Feature Extractors for TF
 ## This section conditionally imports different feature extractors based on the
@@ -52,50 +52,50 @@ from object_detection.utils import tf_version
 ##
 # pylint: disable=g-import-not-at-top
 if tf_version.is_tf2():
-  from object_detection.models import center_net_hourglass_feature_extractor
-  from object_detection.models import center_net_mobilenet_v2_feature_extractor
-  from object_detection.models import center_net_mobilenet_v2_fpn_feature_extractor
-  from object_detection.models import center_net_resnet_feature_extractor
-  from object_detection.models import center_net_resnet_v1_fpn_feature_extractor
-  from object_detection.models import faster_rcnn_inception_resnet_v2_keras_feature_extractor as frcnn_inc_res_keras
-  from object_detection.models import faster_rcnn_resnet_keras_feature_extractor as frcnn_resnet_keras
-  from object_detection.models import ssd_resnet_v1_fpn_keras_feature_extractor as ssd_resnet_v1_fpn_keras
-  from object_detection.models import faster_rcnn_resnet_v1_fpn_keras_feature_extractor as frcnn_resnet_fpn_keras
-  from object_detection.models.ssd_mobilenet_v1_fpn_keras_feature_extractor import SSDMobileNetV1FpnKerasFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v1_keras_feature_extractor import SSDMobileNetV1KerasFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v2_fpn_keras_feature_extractor import SSDMobileNetV2FpnKerasFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v2_keras_feature_extractor import SSDMobileNetV2KerasFeatureExtractor
-  from object_detection.predictors import rfcn_keras_box_predictor
+  from models.research.object_detection.models import center_net_hourglass_feature_extractor
+  from models.research.object_detection.models import center_net_mobilenet_v2_feature_extractor
+  from models.research.object_detection.models import center_net_mobilenet_v2_fpn_feature_extractor
+  from models.research.object_detection.models import center_net_resnet_feature_extractor
+  from models.research.object_detection.models import center_net_resnet_v1_fpn_feature_extractor
+  from models.research.object_detection.models import faster_rcnn_inception_resnet_v2_keras_feature_extractor as frcnn_inc_res_keras
+  from models.research.object_detection.models import faster_rcnn_resnet_keras_feature_extractor as frcnn_resnet_keras
+  from models.research.object_detection.models import ssd_resnet_v1_fpn_keras_feature_extractor as ssd_resnet_v1_fpn_keras
+  from models.research.object_detection.models import faster_rcnn_resnet_v1_fpn_keras_feature_extractor as frcnn_resnet_fpn_keras
+  from models.research.object_detection.models.ssd_mobilenet_v1_fpn_keras_feature_extractor import SSDMobileNetV1FpnKerasFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v1_keras_feature_extractor import SSDMobileNetV1KerasFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v2_fpn_keras_feature_extractor import SSDMobileNetV2FpnKerasFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v2_keras_feature_extractor import SSDMobileNetV2KerasFeatureExtractor
+  from models.research.object_detection.predictors import rfcn_keras_box_predictor
   if sys.version_info[0] >= 3:
-    from object_detection.models import ssd_efficientnet_bifpn_feature_extractor as ssd_efficientnet_bifpn
+    from models.research.object_detection.models import ssd_efficientnet_bifpn_feature_extractor as ssd_efficientnet_bifpn
 
 if tf_version.is_tf1():
-  from object_detection.models import faster_rcnn_inception_resnet_v2_feature_extractor as frcnn_inc_res
-  from object_detection.models import faster_rcnn_inception_v2_feature_extractor as frcnn_inc_v2
-  from object_detection.models import faster_rcnn_nas_feature_extractor as frcnn_nas
-  from object_detection.models import faster_rcnn_pnas_feature_extractor as frcnn_pnas
-  from object_detection.models import faster_rcnn_resnet_v1_feature_extractor as frcnn_resnet_v1
-  from object_detection.models import ssd_resnet_v1_fpn_feature_extractor as ssd_resnet_v1_fpn
-  from object_detection.models import ssd_resnet_v1_ppn_feature_extractor as ssd_resnet_v1_ppn
-  from object_detection.models.embedded_ssd_mobilenet_v1_feature_extractor import EmbeddedSSDMobileNetV1FeatureExtractor
-  from object_detection.models.ssd_inception_v2_feature_extractor import SSDInceptionV2FeatureExtractor
-  from object_detection.models.ssd_mobilenet_v2_fpn_feature_extractor import SSDMobileNetV2FpnFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v2_mnasfpn_feature_extractor import SSDMobileNetV2MnasFPNFeatureExtractor
-  from object_detection.models.ssd_inception_v3_feature_extractor import SSDInceptionV3FeatureExtractor
-  from object_detection.models.ssd_mobilenet_edgetpu_feature_extractor import SSDMobileNetEdgeTPUFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v1_feature_extractor import SSDMobileNetV1FeatureExtractor
-  from object_detection.models.ssd_mobilenet_v1_fpn_feature_extractor import SSDMobileNetV1FpnFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v1_ppn_feature_extractor import SSDMobileNetV1PpnFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v2_feature_extractor import SSDMobileNetV2FeatureExtractor
-  from object_detection.models.ssd_mobilenet_v3_feature_extractor import SSDMobileNetV3LargeFeatureExtractor
-  from object_detection.models.ssd_mobilenet_v3_feature_extractor import SSDMobileNetV3SmallFeatureExtractor
-  from object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetCPUFeatureExtractor
-  from object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetDSPFeatureExtractor
-  from object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetEdgeTPUFeatureExtractor
-  from object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetGPUFeatureExtractor
-  from object_detection.models.ssd_spaghettinet_feature_extractor import SSDSpaghettinetFeatureExtractor
-  from object_detection.models.ssd_pnasnet_feature_extractor import SSDPNASNetFeatureExtractor
-  from object_detection.predictors import rfcn_box_predictor
+  from models.research.object_detection.models import faster_rcnn_inception_resnet_v2_feature_extractor as frcnn_inc_res
+  from models.research.object_detection.models import faster_rcnn_inception_v2_feature_extractor as frcnn_inc_v2
+  from models.research.object_detection.models import faster_rcnn_nas_feature_extractor as frcnn_nas
+  from models.research.object_detection.models import faster_rcnn_pnas_feature_extractor as frcnn_pnas
+  from models.research.object_detection.models import faster_rcnn_resnet_v1_feature_extractor as frcnn_resnet_v1
+  from models.research.object_detection.models import ssd_resnet_v1_fpn_feature_extractor as ssd_resnet_v1_fpn
+  from models.research.object_detection.models import ssd_resnet_v1_ppn_feature_extractor as ssd_resnet_v1_ppn
+  from models.research.object_detection.models.embedded_ssd_mobilenet_v1_feature_extractor import EmbeddedSSDMobileNetV1FeatureExtractor
+  from models.research.object_detection.models.ssd_inception_v2_feature_extractor import SSDInceptionV2FeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v2_fpn_feature_extractor import SSDMobileNetV2FpnFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v2_mnasfpn_feature_extractor import SSDMobileNetV2MnasFPNFeatureExtractor
+  from models.research.object_detection.models.ssd_inception_v3_feature_extractor import SSDInceptionV3FeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_edgetpu_feature_extractor import SSDMobileNetEdgeTPUFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v1_feature_extractor import SSDMobileNetV1FeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v1_fpn_feature_extractor import SSDMobileNetV1FpnFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v1_ppn_feature_extractor import SSDMobileNetV1PpnFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v2_feature_extractor import SSDMobileNetV2FeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v3_feature_extractor import SSDMobileNetV3LargeFeatureExtractor
+  from models.research.object_detection.models.ssd_mobilenet_v3_feature_extractor import SSDMobileNetV3SmallFeatureExtractor
+  from models.research.object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetCPUFeatureExtractor
+  from models.research.object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetDSPFeatureExtractor
+  from models.research.object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetEdgeTPUFeatureExtractor
+  from models.research.object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetGPUFeatureExtractor
+  from models.research.object_detection.models.ssd_spaghettinet_feature_extractor import SSDSpaghettinetFeatureExtractor
+  from models.research.object_detection.models.ssd_pnasnet_feature_extractor import SSDPNASNetFeatureExtractor
+  from models.research.object_detection.predictors import rfcn_box_predictor
 # pylint: enable=g-import-not-at-top
 
 if tf_version.is_tf2():

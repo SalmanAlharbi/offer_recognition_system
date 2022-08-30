@@ -20,8 +20,8 @@ maps, and applying blocks of convolution, batchnorm, and activation layers.
 """
 from six.moves import range
 import tensorflow as tf
-from object_detection.utils import ops
-from object_detection.utils import shape_utils
+from models.research.object_detection.utils import ops
+from models.research.object_detection.utils import shape_utils
 
 
 def create_conv_block(name, num_filters, kernel_size, strides, padding,
