@@ -218,7 +218,7 @@ if __name__ == '__main__':
     arabconfig = r"-l ara --psm 6 --oem 3 "
     qunconfig = r"--psm 6 --oem 3 "
     digitconfig = r"--psm 6 --oem 3 digits "
-    local_css(r"assets\style.css")
+    local_css("assets/style.css")
     st.write("hello")
     file = st.file_uploader('Upload An Image', type=["jpg", "jpeg"])
     entered_items = st.empty()
