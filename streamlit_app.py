@@ -17,7 +17,7 @@ from spacy.matcher import Matcher
 import base64
 from io import BytesIO
 from PIL import Image as im
-tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+tess.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
 page_detection_model = None
 offer_category_index = None
 offer_detection_model = None
@@ -26,7 +26,7 @@ data_category_index = None
 def load_page_model():
     # Load pipeline config and build a detection model
     configs = config_util.get_configs_from_pipeline_file(
-        r"my_models/models/offer_box_detection_model/pipeline.config")
+        "my_models/models/offer_box_detection_model/pipeline.config")
     global page_detection_model
     page_detection_model = model_builder.build(
         model_config=configs['model'], is_training=False)
